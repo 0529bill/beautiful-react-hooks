@@ -38,7 +38,7 @@ function useCookie(cookieKey: string): [string | null, (updateValue: any) => voi
   }, [])
 
   const deleteCookie = () => {
-    (window as any).cookieStore.delete(cookieKey)
+    (window as any).cookieStore.delete(cookieKey).then(() => setValue(null))
     if (!cookieIsDeleted) {
       setCookieIsDeleted(true)
     }
@@ -50,9 +50,7 @@ function useCookie(cookieKey: string): [string | null, (updateValue: any) => voi
         name: cookieKey,
         value: JSON.stringify(updateValue),
       })
-      .then(() => {
-        setValue(updateValue)
-      })
+      .then(() => setValue(updateValue))
   }
   return [value, updateCookie, deleteCookie]
 }

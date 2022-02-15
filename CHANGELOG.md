@@ -773,3 +773,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - rewriting `useDebouncedFn` and `useThrottledFn` as `useDebouncedCallback` and `useThrottledCallback` 
 - `useDebouncedCallback` and `useThrottledCallback` improvements
+
+
+## [1.3.0] - 2022-02-15
+
+### Added
+
+- `useCookie`
